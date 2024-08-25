@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #63004a, #004d66) ; /* Gradient awal */
+    background-size: 400% 400%; /* Memperbesar ukuran gradient untuk animasi */
+    font-family: Arial, sans-serif;
+    animation: gradientAnimation 10s ease infinite; /* Menambahkan animasi */
+    overflow-x: hidden;
+}
+
+/* Mendefinisikan animasi gradient */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.card {
+    position: relative; /* Diperlukan untuk backdrop-filter */
+    background: rgba(255, 255, 255, 0); /* Warna latar belakang putih dengan transparansi */
+    border-radius: 10px; /* Membuat sudut melengkung, opsional */
+    backdrop-filter: blur(10px); /* Efek blur pada latar belakang */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan agar lebih menonjol */
+}
+
+
+.music-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-left, .info-right {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.card {
+    flex: 2; /* Lebih besar dari info-left dan info-right */
+}
+
+.audio-player img {
+    max-width: 100%;
+    height: auto;
+}
+
+.queue {
+    overflow-y: auto;
+}
+
+
+/* Media Queries for smaller screens */
+@media (max-width: 576px) {
+    .card {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    #artistImage {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+.next-song-preview {
+    max-width: 300px;
+}
+
+#volumeControl {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #007bff 50%, #ddd 50%);
+    outline: none;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: background 0.15s ease-in-out;
+}
+
+#volumeControl::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: transparent;
+}
+
+#volumeControl::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#volumeControl::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ff00bf;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+#volumeControl::-ms-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ff00dd;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.next-song-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#queueList {
+    margin-top: 0;
+    padding-left: 0;
+    background-color: #63004a67;
+}
+
+#queueList li {
+    padding: 1rem;
+    border-bottom: 1px solid #ffffff;
+}
+
+.btn-start img {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-start:hover img {
+    transform: scale(1.1); /* Memperbesar sedikit saat hover */
+}
+
+.btn-start:active img {
+    transform: scale(0.9); /* Mengecilkan sedikit saat klik */
+}
+
+.about-me {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5); /* Background transparan untuk kontras */
+    border-radius: 8px;
+}
+
+.about-me-image {
+    width: 150px; /* Atur sesuai kebutuhan */
+    height: auto;
+    border-radius: 50%;
+    margin-right: 1rem; /* Jarak antara gambar dan teks */
+}
+
+.about-me-text {
+    color: #fff; /* Warna teks putih untuk kontras */
+}
+
+.about-me-text h2 {
+    margin-bottom: 1rem;
+}
+
+.about-me-text p {
+    margin: 0;
+}
+
